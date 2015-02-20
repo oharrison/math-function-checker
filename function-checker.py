@@ -1,9 +1,9 @@
 """
 This program takes as input a number (n) which represents the number of
-ordered pairs in a set. It then takes in those ordered pairs and outputs
-the entire set. It also outputs to the screen, formatted text representing
+ordered pairs in a relation. It then takes in those ordered pairs and outputs
+the entire relation. It also outputs to the screen, formatted text representing
 the domain and range of the given relation. Additonally, it tells the user
-if the relation given represents a function.
+if the given relation represents a function.
 """
 
 def getRelationLength():
