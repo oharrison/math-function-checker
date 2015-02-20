@@ -94,6 +94,6 @@ if __name__ == "__main__":
     if isFunction(relation):
         print("This relation represents a function.")
     else:
-        print("This relation do not represent a function.")
+        print("This relation does not represent a function.")
     
             
