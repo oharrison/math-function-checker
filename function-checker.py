@@ -44,6 +44,17 @@ def checkedValue(num, value_name): # needs to be reworked
         num = input("Enter " + value_name + " : ")
         checkedValue(num, value_name)
     return num
+
+def isFunction(relation):
+    """
+    Takes the paramenter relation of type dict and checks
+    if the given relation represents a function.
+    """
+    for key in relation.keys():
+        if len(relation[key]) > 1:
+            return False
+        else:
+            return True
         
 if __name__ == "__main__":
     
@@ -70,16 +81,19 @@ if __name__ == "__main__":
                 relation[x_value].append(y_value)
 
               
-    #Output relation
-    print(relation) 
+    #Output relation, domain, and range
+    print("\nRelation: ", relation) 
     print("Domain\t\tRange")
     for domain_element in relation.keys():
         if len(relation[domain_element]) > 1:
             for item in range(len(relation[domain_element])):
                 print("{domain_element}\t\t{range_element}".format(domain_element=domain_element, range_element=relation[domain_element][item]))
         else:
-            print("{domain_element}\t\t{range_element}".format(domain_element=domain_element, range_element=relation[domain_element][item]))
+            print("{domain_element}\t\t{range_element}".format(domain_element=domain_element, range_element=relation[domain_element][0]))
 
-    #Does this relation represent a function?
+    if isFunction(relation):
+        print("This relation represents a function.")
+    else:
+        print("This relation do not represent a function.")
     
             
