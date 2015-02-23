@@ -8,7 +8,7 @@ if the given relation represents a function.
 
 def getRelationLength():
     """
-    Prompts for an input and returns it.
+    Prompts the user for an input and returns it.
     """
     n = input("Enter the size of the relation: ")
     return n
@@ -87,9 +87,11 @@ if __name__ == "__main__":
     for domain_element in relation.keys():
         if len(relation[domain_element]) > 1:
             for item in range(len(relation[domain_element])):
-                print("{domain_element}\t\t{range_element}".format(domain_element=domain_element, range_element=relation[domain_element][item]))
+                print("{domain_element}\t\t{range_element}".format(domain_element=domain_element,
+                                                                   range_element=relation[domain_element][item]))
         else:
-            print("{domain_element}\t\t{range_element}".format(domain_element=domain_element, range_element=relation[domain_element][0]))
+            print("{domain_element}\t\t{range_element}".format(domain_element=domain_element,
+                                                               range_element=relation[domain_element][0]))
 
     if isFunction(relation):
         print("This relation represents a function.")
