@@ -2,7 +2,7 @@
 This program takes as input a number (n) which represents the number of
 ordered pairs in a relation. It then takes in those ordered pairs and outputs
 the entire relation. It also outputs to the screen, formatted text representing
-the domain and range of the given relation. Additonally, it tells the user
+the domain and range of the given relation. Additionally, it tells the user
 if the given relation represents a function.
 """
 
@@ -13,41 +13,45 @@ def getRelationLength():
     n = input("Enter the size of the relation: ")
     return n
 
-def checkedRelationLength(n): # needs to be reworked 
+def checkedRelationLength(n):
     """
     Checks if the parameter n is an integer.
     If n is not an integer prompt the user to enter
     an integer until she does.
     """
-    try:
-        isint = isinstance(int(n), int)
-        n = int(n)
-    except ValueError:
-        print("Input must be an integer greater than or equal to two (2).")
-        n = getRelationLength()
-        checkedRelationLength(n)
-    else:
-        if not isint or not n >= 2:
+    correct = False
+    while not correct:
+        try:
+            n = int(n)
+            if n < 2:
+                print("Input must be an integer greater than or equal to two (2).")
+                n = getRelationLength()
+                continue
+            correct = True
+        except:
             print("Input must be an integer greater than or equal to two (2).")
             n = getRelationLength()
-            checkedRelationLength(n)
-        else: return n
+    return n
 
-
-def checkedValue(num, value_name): # needs to be reworked
-    "checks to ensure that the given value is a number"
-    try:
-        isNum = isinstance(float(n), float)
-        num = float(num)
-    except Exception: #Specify Exception
-        print(value_name + "  must be a number.")
-        num = input("Enter " + value_name + " : ")
-        checkedValue(num, value_name)
+def checkedValue(num, value_name):
+    """"
+    Checks to ensure that the given value is a number.
+    Prompts user for a new value if previously inputted value
+    is not a number until user inputs an valid value.
+    """
+    correct = False
+    while not correct:
+        try:
+            num = float(num)
+            correct = True
+        except:
+            print(value_name + "  must be a number.")
+            num = input("Enter " + value_name + " : ")
     return num
 
 def isFunction(relation):
     """
-    Takes the paramenter relation of type dict and checks
+    Takes the parameter relation of type dict and checks
     if the given relation represents a function.
     """
     for key in relation.keys():
@@ -62,7 +66,6 @@ if __name__ == "__main__":
     
     n = getRelationLength()
     n = checkedRelationLength(n)
-    # Error type(n) == NoneType if input given is 1,2
 
     #Build relation
     for num in range(n):
