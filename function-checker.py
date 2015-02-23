@@ -59,20 +59,14 @@ def isFunction(relation):
             return False
         else:
             return True
-        
-if __name__ == "__main__":
-    
-    relation = {}
-    
-    n = getRelationLength()
-    n = checkedRelationLength(n)
 
-    #Build relation
-    for num in range(n):
+def buildRelation(size):
+    relation = {}
+    for num in range(size):
             for i in range(2):
                 if i == 0:
                     x_value = input("Enter x-value: ")
-                    x_value = checkedValue(x_value, "x-value")    
+                    x_value = checkedValue(x_value, "x-value")
                 else:
                     y_value = input("Enter y-value: ")
                     y_value = checkedValue(y_value, "y-value")
@@ -82,8 +76,17 @@ if __name__ == "__main__":
             else:
                 relation[x_value] = []
                 relation[x_value].append(y_value)
+    return relation
+        
+if __name__ == "__main__":
 
-              
+    # get and verify length of the relation
+    n = getRelationLength()
+    n = checkedRelationLength(n)
+
+    # build the relation
+    relation = buildRelation(n)
+
     #Output relation, domain, and range
     print("\nRelation: ", relation) 
     print("Domain\t\tRange")
