@@ -4,23 +4,21 @@ This script is designed to take as input a file in which the ordered pairs in a 
 if the given relation represents a function or not.
 
 # Sample input file
-|Domain Value | Range Value |
-|-------------|-------------|
-| 1 | 2 |
-| 3 | 5 |
-| 7 | 10|
+1, 2<br/>
+3, 5<br/>
+7, 10<br/>
 
 Each line represents an ordered pair in a relation.
 
-NOTE: Only the numbers are in the file. Each pair of numbers in on a separate line. The numbers in a pair are separated by a comma
-
 # Sample output file
-| Domain | Range |
-| ---- | ----- |
-| 1.0  |  2.0  |
-| 3.0	 | 	5.0  |
-| 7.0	 |	10.0 |
+|Domain | Range |
+|-------|-------|
+|1.0 |2.0|
+|3.0 |5.0|
+|7.0 |10.0|
 
+# Usage
+Make sure that function-checker.py is executable. <br/> ~$ ./function-checker.py _filename_
 
 # Things I learned while building this
 1. How to use argparse module
