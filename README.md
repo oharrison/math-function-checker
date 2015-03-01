@@ -8,14 +8,13 @@ if the given relation represents a function or not.
 3, 5<br/>
 7, 10<br/>
 
-Each line represents an ordered pair in a relation.
-
 # Sample output file
 |Domain | Range |
 |-------|-------|
 |1.0 |2.0|
 |3.0 |5.0|
 |7.0 |10.0|
+This relation represents a function.
 
 # Usage
 Make sure that function-checker.py is executable. <br/> ~$ ./function-checker.py _filename_
@@ -23,3 +22,4 @@ Make sure that function-checker.py is executable. <br/> ~$ ./function-checker.py
 # Things I learned while building this
 1. How to use argparse module
 2. How to use csv module
+3. How to use github's markdown
