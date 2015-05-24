@@ -3,6 +3,10 @@
 import argparse, csv
 
 def buildRelation(relation_reader):
+    """
+    Read data from csv reader, and contruct
+    and return a relation
+    """
     relation = {}
     for row in relation_reader:
         if float(row[0]) not in relation.keys():
@@ -14,6 +18,9 @@ def buildRelation(relation_reader):
     return relation
 
 def outputDomainAndRange(relation):
+    """
+    Format and output relation
+    """
     print("Domain\t\tRange")
     for domain_element in relation.keys():
         if len(relation[domain_element]) > 1:
@@ -26,7 +33,7 @@ def outputDomainAndRange(relation):
                                                                                            
 def isFunction(relation):
     """
-    Returns True if parameter relation represents a function
+    Return True if parameter relation represents a function
     and False if it does not represent a function
     """
     if len(relation) < 2:
